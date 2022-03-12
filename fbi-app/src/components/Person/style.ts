@@ -10,7 +10,7 @@ export const cardContainer = styled.li`
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    flex-basis: 20rem;
+    flex-basis: 22rem;
 `
 
 export const topContainer = styled.div`

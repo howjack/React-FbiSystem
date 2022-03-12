@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<SuspectList />} />
-        <Route path='/details' element={<SuspectDetail />} />
+        <Route path='/details/:id' element={<SuspectDetail />} />
         <Route path='/register' element={<SuspectRegister />} />
       </Routes>
     </BrowserRouter>

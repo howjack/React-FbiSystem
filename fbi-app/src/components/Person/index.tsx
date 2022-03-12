@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import { personProps } from '../../types/suspects'
 import * as S from './style'
 
 export default function Person({suspect}: personProps) {
+    const navigate = useNavigate();
     return (
         <S.cardContainer>
             <S.topContainer>
@@ -16,7 +18,7 @@ export default function Person({suspect}: personProps) {
                 <p>COMPANY: {suspect.company}</p>
                 <p>EMAIL: {suspect.email}</p>
             </S.infoContainer>
-            <S.detailButton>Detalhes</S.detailButton>
+            <S.detailButton onClick={() => {navigate(`/details/${suspect._id}`)}}>Detalhes</S.detailButton>
         </S.cardContainer>
     )
 }

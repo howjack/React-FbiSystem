@@ -21,12 +21,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run server",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -w database.json -p 6007",
-    "run": "react-scripts start"
+    "server": "json-server -w database.json -p 6007"
   },
   "eslintConfig": {
     "extends": [

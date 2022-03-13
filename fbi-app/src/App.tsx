@@ -6,6 +6,7 @@ import SuspectRegister from './pages/SuspectRegister';
 import SuspectList from './pages/SuspectsList';
 
 function App() {
+  console.log(process.env);
   return (
     <BrowserRouter>
       <Navbar />

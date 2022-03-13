@@ -3,10 +3,11 @@ import * as S from './style'
 import { useParams } from "react-router-dom"
 import api from "../../api/axios";
 import Person from "../../components/Person";
+import { detailPersonProps } from "../../types/suspects";
 
 export default function SuspectDetail() {
     const { id } = useParams();
-    const [person, setPerson] = useState<any>([]);
+    const [person, setPerson] = useState<detailPersonProps>([]);
     const [exist, setExist] = useState<boolean>(false);
 
     useEffect(() => {
@@ -50,7 +51,7 @@ export default function SuspectDetail() {
                 <S.participantsContainer>
                     <h3>Participants:</h3>
                     <S.listContainer>
-                        {person[0].participants.map((suspect: any) => (
+                        {person[0].participants.map((suspect) => (
                             <Person suspect={suspect} key={suspect.name}/>
                         ))}
                     </S.listContainer>

@@ -10,7 +10,7 @@ if(process.env.NODE_ENV !== "production"){
 
 const api = axios.create({
     baseURL: baseURL,
-    timeout: 1000,
+    timeout: 3000,
 }); 
 
 export default api;

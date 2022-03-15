@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import * as S from './style'
 import { useParams } from "react-router-dom"
 import api from "../../api/axios";
-import Person from "../../components/Person";
 import { detailPersonProps } from "../../types/suspects";
 import ProfileCard from "../../components/ProfileCard";
+import Participants from "../../components/Participants";
 
 export default function SuspectDetail() {
     const { id } = useParams();
@@ -28,14 +28,7 @@ export default function SuspectDetail() {
         <>
             {exist && <S.container>
                 <ProfileCard person={person[0]} />
-                {person[0].participants && <S.participantsContainer>
-                    <h3>Participants:</h3>
-                    <S.listContainer>
-                        {person[0].participants.map((suspect) => (
-                            <Person suspect={suspect} key={suspect.name} />
-                        ))}
-                    </S.listContainer>
-                </S.participantsContainer>}
+                {person[0].participants && <Participants participants={person[0].participants}/>}
             </S.container>
             }
         </>

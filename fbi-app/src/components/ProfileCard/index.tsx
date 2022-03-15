@@ -1,7 +1,7 @@
-import { PersonProps } from '../../types/suspects'
+import { ProfileProps } from '../../types/suspects'
 import * as S from './style'
 
-export default function ProfileCard({ person }: PersonProps) {
+export default function ProfileCard({ person }: ProfileProps) {
 
     return (
         <S.profileContainer>

@@ -44,10 +44,14 @@ export type detailPersonProps = {
 	registered: string;
 	latitude: number;
 	longitude: number;
-	participants?: peopleProps;
+	participants: peopleProps;
 }[];
 
-export type PersonProps = {
+export type participantsProps = {
+	participants: peopleProps;
+};
+
+export type ProfileProps = {
 	person: {
 		_id: string;
 		name: string;

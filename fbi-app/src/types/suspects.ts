@@ -3,38 +3,59 @@ export type personProps = {
 		_id: string;
 		name: string;
 		age: number;
-		balance: number;
+		balance: string;
 		company: string;
 		email: string;
-		picture: string;
+		picture: string | undefined;
 	};
 };
 
 export type registerPersonProps = {
-    balance: number;
-    picture: string;
-    age: number;
-    eyeColor: string;
-    name: string;
-    gender: string;
-    company: string;
-    email: string;
-    phone: string;
-    address: string;
-    about: string;
-    registered: string;
-    latitude: number;
-    longitude: number;
-}
+	_id: string;
+	balance: string;
+	picture: string | undefined;
+	age: number;
+	eyeColor: string;
+	name: string;
+	gender: string;
+	company: string;
+	email: string;
+	phone: string;
+	address: string;
+	about: string;
+	registered: string;
+	latitude: number;
+	longitude: number;
+};
 
 export type detailPersonProps = {
+	_id: string;
+	name: string;
+	age: number;
+	balance: string;
+	company: string;
+	email: string;
+	picture: string | undefined;
+	eyeColor: string;
+	gender: string;
+	phone: string;
+	address: string;
+	about: string;
+	registered: string;
+	latitude: number;
+	longitude: number;
+	participants?: peopleProps;
+}[];
+
+export type PersonProps = {
+	person: {
 		_id: string;
 		name: string;
 		age: number;
-		balance: number;
+		balance: string;
 		company: string;
 		email: string;
-		picture: string;
+		picture: string | undefined;
 		eyeColor: string;
 		gender: string;
 		phone: string;
@@ -43,15 +64,15 @@ export type detailPersonProps = {
 		registered: string;
 		latitude: number;
 		longitude: number;
-		participants: peopleProps;
-}[]
+	};
+};
 
 export type peopleProps = {
 	_id: string;
 	name: string;
 	age: number;
-	balance: number;
+	balance: string;
 	company: string;
 	email: string;
-	picture: string;
+	picture: string | undefined;
 }[];

@@ -5,7 +5,6 @@ export const subTitle = styled.h3`
     font-size: 50px;
     font-weight: bold;
     font-family: 'Smooch Sans', sans-serif;
-    margin-bottom: 10px;
 `
 
 export const listContainer = styled.ul`
@@ -15,5 +14,5 @@ export const listContainer = styled.ul`
     flex-wrap: wrap;
     gap: 30px;
     max-width: 1440px;
-    margin: auto;
+    margin: 10px auto;
 `

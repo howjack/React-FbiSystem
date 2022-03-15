@@ -23,6 +23,7 @@ export const topContainer = styled.div`
     img{
         width: 120px;
         margin-bottom: 10px;
+        aspect-ratio: 1/1;
     }
 `
 

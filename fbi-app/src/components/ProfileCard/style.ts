@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const profileContainer = styled.div`
-    background-color: #e0e0e0;
+    background-color: ${({ theme }) => theme.profile};
+    /* background-color: #e0e0e0; */
     padding: 10px;
     min-height: 92vh;
     display: flex;

@@ -21,14 +21,14 @@ export const registerContainer = styled.form`
         font-size: 24px;
         font-weight: 600;
 		padding: 14px 10px;
-		border: 2px solid #082759;
+		border: 2px solid ${({ theme }) => theme.inputBorder};
 		border-radius: 5px;
 		text-transform: uppercase;
 		text-align: center;
 		margin: 10px 0;
 
         &:hover{
-            background-color: #08275978;
+            background-color: ${({ theme }) => theme.buttonHover};
         }
 	}
 `;
@@ -45,7 +45,7 @@ export const inputContainer = styled.div`
 	textArea {
 		font-size: 16px;
 		padding: 14px 10px;
-		border: 2px solid #082759;
+		border: 2px solid ${({ theme }) => theme.inputBorder};
 		border-radius: 5px;
 	}
 

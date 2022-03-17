@@ -23,3 +23,24 @@ export const navContainer = styled.div`
         transform: translateY(4px);
     }
 `
+
+type darkModeProps = {
+    theme: string;
+}
+
+export const darkLightButton = styled.button<darkModeProps>`
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    background-color: ${props => props.theme === "dark" ? "#f8f8f8" : "#252525"};
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+
+
+
+    &:hover{
+        opacity: 0.9;
+    }
+    
+`

@@ -6,7 +6,7 @@ import * as S from './style'
 
 export default function SuspectList() {
 
-    const [suspects, setSuspects] = useState<peopleProps>([]);
+    const [suspects, setSuspects] = useState<peopleProps[]>([]);
 
     useEffect(() => {
         api.get("/person")
@@ -19,7 +19,7 @@ export default function SuspectList() {
 
     return (
         <>
-            <S.subTitle>Lista de Suspeitos</S.subTitle>
+            <S.subTitle>Suspects List</S.subTitle>
             <S.listContainer>
                 {suspects.map((suspect) => (
                     <Person simpleMode={false} suspect={suspect} key={suspect._id}/>

@@ -1,6 +1,7 @@
 import * as S from './style'
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import { GiWantedReward } from 'react-icons/gi'
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -15,10 +16,10 @@ export default function Navbar({ setTheme, theme }: NavBarProps) {
     }
 
     useEffect(() => {
-        if(localStorage.theme){
+        if (localStorage.theme) {
             setTheme(localStorage.getItem("theme"))
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -27,10 +28,14 @@ export default function Navbar({ setTheme, theme }: NavBarProps) {
                 <Link to={"/"}>
                     <h1>FBI System</h1>
                 </Link>
-
-                <Link to={"/register"}>
-                    <AiOutlinePlus color='white' size={35} />
-                </Link>
+                <S.iconsContainer>
+                    <Link to={"/register"}>
+                        <AiOutlinePlus color='white' size={35} />
+                    </Link>
+                    <Link to={"/blacklist"}>
+                        <GiWantedReward color='white' size={35} />
+                    </Link>
+                </S.iconsContainer>
             </S.navContainer>
             <S.darkLightButton
                 onClick={themeToggler}

@@ -24,6 +24,12 @@ export const navContainer = styled.div`
     }
 `
 
+export const iconsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+`
+
 type darkModeProps = {
     theme: string;
 }

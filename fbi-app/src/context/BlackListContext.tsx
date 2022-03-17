@@ -1,16 +1,16 @@
 import { createContext, useEffect, useState } from "react";
-import { detailPersonProps } from '../types/suspects'
+import { detailPersonProps, peopleProps, personProps } from '../types/suspects'
 
 type IContext = {
-    blackList: detailPersonProps[];
-    addSuspect: (_suspect: any) => void;
+    blackList: peopleProps[];
+    addSuspect: (_suspect: peopleProps) => void;
     removeSuspect: (_id: string) => void;
 }
 
 export const BlackListContext = createContext<IContext>({
     blackList: [],
-    addSuspect: (_suspect: any) => {},
-    removeSuspect: (_id: string) => {}
+    addSuspect: (_suspect: peopleProps) => { },
+    removeSuspect: (_id: string) => { }
 });
 
 type IProvider = {
@@ -18,10 +18,21 @@ type IProvider = {
 }
 
 export function BlackListProvider({ children }: IProvider) {
-    const [blackList, setBlackList] = useState<detailPersonProps[]>([]);
+    const [blackList, setBlackList] = useState<peopleProps[]>([]);
 
-    function addSuspect(suspect: any) {
-        setBlackList([...blackList, suspect])
+    async function addSuspect(suspect: peopleProps) {
+        const reply = await blackList.find( _suspect => {
+            if (_suspect._id === suspect._id) {
+                return true;
+            }
+        })
+
+        if(reply){
+            return
+        }
+
+        setBlackList([...blackList, suspect]);
+
     }
 
     function removeSuspect(id: string) {

@@ -4,9 +4,9 @@ import { BlackListContext } from '../../context/BlackListContext';
 import { personProps } from '../../types/suspects'
 import * as S from './style'
 
-export default function Person({ suspect, simpleMode }: personProps) {
+export default function Person({ suspect, simpleMode, remove }: personProps) {
     const navigate = useNavigate();
-    const {addSuspect} = useContext(BlackListContext)
+    const { addSuspect, removeSuspect } = useContext(BlackListContext)
     return (
         <S.cardContainer>
             <S.topContainer>
@@ -21,19 +21,28 @@ export default function Person({ suspect, simpleMode }: personProps) {
                 <p>COMPANY: {suspect.company}</p>
                 <p>EMAIL: {suspect.email}</p>
             </S.infoContainer>
-                {!simpleMode && <S.buttonContainer>
+            {!simpleMode && <S.buttonContainer>
+                <S.Button
+                    onClick={() => { navigate(`/details/${suspect._id}`) }}
+                >
+                    Details
+                </S.Button>
+                {!remove ?
                     <S.Button
-                        onClick={() => { navigate(`/details/${suspect._id}`) }}
-                    >
-                        Details
-                    </S.Button>
-                    <S.Button 
-                    onClick={() => addSuspect(suspect)}
-                    deleted
+                        onClick={() => addSuspect(suspect)}
+                        deleted
                     >
                         Add in BlackList
+                    </S.Button> :
+                    <S.Button
+                        onClick={() => removeSuspect(suspect._id)}
+                        deleted
+                    >
+                        Remove from BlackList
                     </S.Button>
-                </S.buttonContainer>}
+                }
+
+            </S.buttonContainer>}
         </S.cardContainer>
     )
 }

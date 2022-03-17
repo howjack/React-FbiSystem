@@ -9,6 +9,7 @@ import { GlobalStyles } from "./components/GlobalStyle";
 import { lightTheme, darkTheme } from "./components/Themes"
 import { useEffect, useState } from 'react';
 import { BlackListProvider } from './context/BlackListContext';
+import BlackList from './pages/BlackList';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -28,6 +29,7 @@ function App() {
             <Route path='/' element={<SuspectList />} />
             <Route path='/details/:id' element={<SuspectDetail />} />
             <Route path='/register' element={<SuspectRegister />} />
+            <Route path='/blacklist' element={<BlackList />} />
           </Routes>
         </ThemeProvider>
       </BlackListProvider>

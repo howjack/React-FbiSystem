@@ -1,4 +1,5 @@
 export type personProps = {
+	simpleMode: boolean
 	suspect: {
 		_id: string;
 		name: string;
@@ -45,7 +46,7 @@ export type detailPersonProps = {
 	latitude: number;
 	longitude: number;
 	participants: peopleProps;
-}[];
+};
 
 export type participantsProps = {
 	participants: peopleProps;

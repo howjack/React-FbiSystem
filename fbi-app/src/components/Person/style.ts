@@ -37,11 +37,28 @@ export const infoContainer = styled.div`
         font-size: 24px;
     }
 `
+export const buttonContainer = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+`
 
-export const detailButton = styled.button`
+type ButtonProps = {
+    deleted?: boolean
+}
+
+export const Button = styled.button<ButtonProps>`
     padding: 2px 0;
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 0px;
     font-family: 'Smooch Sans', sans-serif;
+    background-color: ${props => props.deleted? "#bf4d43" : "#e8e8e8"};
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+
+    &:hover{
+        opacity: 0.8;
+    }
 `

@@ -8,7 +8,7 @@ import Participants from "../../components/Participants";
 
 export default function SuspectDetail() {
     const { id } = useParams();
-    const [person, setPerson] = useState<detailPersonProps>([]);
+    const [person, setPerson] = useState<detailPersonProps[]>([]);
     const [exist, setExist] = useState<boolean>(false);
 
     useEffect(() => {

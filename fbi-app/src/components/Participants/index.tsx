@@ -9,7 +9,7 @@ export default function Participants({participants}: participantsProps) {
             <h3>Participants:</h3>
             <S.listContainer>
                 {participants.map((suspect) => (
-                    <Person suspect={suspect} key={suspect.name} />
+                    <Person simpleMode={true} suspect={suspect} key={suspect.name} />
                 ))}
             </S.listContainer>
         </S.participantsContainer>

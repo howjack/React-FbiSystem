@@ -8,6 +8,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/GlobalStyle";
 import { lightTheme, darkTheme } from "./components/Themes"
 import { useEffect, useState } from 'react';
+import { BlackListProvider } from './context/BlackListContext';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -19,15 +20,17 @@ function App() {
   return (
 
     <BrowserRouter>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles />
-        <Navbar setTheme={setTheme} theme={theme} />
-        <Routes>
-          <Route path='/' element={<SuspectList />} />
-          <Route path='/details/:id' element={<SuspectDetail />} />
-          <Route path='/register' element={<SuspectRegister />} />
-        </Routes>
-      </ThemeProvider>
+      <BlackListProvider>
+        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+          <GlobalStyles />
+          <Navbar setTheme={setTheme} theme={theme} />
+          <Routes>
+            <Route path='/' element={<SuspectList />} />
+            <Route path='/details/:id' element={<SuspectDetail />} />
+            <Route path='/register' element={<SuspectRegister />} />
+          </Routes>
+        </ThemeProvider>
+      </BlackListProvider>
     </BrowserRouter>
   );
 }

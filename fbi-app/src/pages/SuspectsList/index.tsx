@@ -22,7 +22,7 @@ export default function SuspectList() {
             <S.subTitle>Lista de Suspeitos</S.subTitle>
             <S.listContainer>
                 {suspects.map((suspect) => (
-                    <Person suspect={suspect} key={suspect._id}/>
+                    <Person simpleMode={false} suspect={suspect} key={suspect._id}/>
                 ))}
             </S.listContainer>
         </>

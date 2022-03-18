@@ -38,7 +38,7 @@ export default function Person({ suspect, simpleMode, remove }: personProps) {
                         onClick={() => removeSuspect(suspect._id)}
                         deleted
                     >
-                        Remove from BlackList
+                        Remove
                     </S.Button>
                 }
 
